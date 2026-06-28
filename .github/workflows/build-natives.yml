@@ -24,11 +24,6 @@ jobs:
         with:
           ndk-version: r27c
 
-      - name: Install Zig
-        uses: goto-bus-stop/setup-zig@v2
-        with:
-          version: 0.13.0
-
       - name: Install Bun
         uses: oven-sh/setup-bun@v2
         with:
@@ -41,7 +36,6 @@ jobs:
         env:
           TARGET_PLATFORM: linux
           TARGET_ARCH: arm64
-          CROSS_TARGET: aarch64-linux-android
           ANDROID_NDK_HOME: ${{ steps.ndk.outputs.ndk-path }}
           CC: ${{ steps.ndk.outputs.ndk-path }}/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android24-clang
           CXX: ${{ steps.ndk.outputs.ndk-path }}/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android24-clang++
