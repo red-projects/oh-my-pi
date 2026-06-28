@@ -24,6 +24,11 @@ jobs:
         with:
           ndk-version: r27c
 
+      - name: Install Zig
+        uses: goto-bus-stop/setup-zig@v2
+        with:
+          version: 0.13.0
+
       - name: Install Bun
         uses: oven-sh/setup-bun@v2
         with:
